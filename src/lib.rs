@@ -13,6 +13,7 @@ pub struct Model {
     ctx: Ctx<Env>,
     lib_recent: LibRecent,
     catalogs: CatalogGrouped,
+    notifications: Notifications,
 }
 
 #[wasm_bindgen]
