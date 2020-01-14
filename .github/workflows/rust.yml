@@ -15,4 +15,4 @@ jobs:
         - name: Build
           run: |
             echo -e "[url \"https://github.com/\"]\n\tinsteadOf = ssh://git@github.com/" > ~/.gitconfig
-            rustup default nightly && cargo install wasm-pack && yarn install && yarn build && npm publish
+            rustup default nightly && cargo install wasm-pack && yarn install && yarn build && npm login --registry=https://npm.pkg.github.com/ && npm publish
