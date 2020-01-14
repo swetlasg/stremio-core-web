@@ -11,7 +11,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git@github.com:swetlasg/stremio-core-web.git"
+        "url": "git://github.com/swetlasg/stremio-core-web.git"
     },
     "devDependencies": {
         "@babel/cli": "7.6.0",
