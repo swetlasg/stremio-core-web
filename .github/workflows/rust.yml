@@ -13,7 +13,7 @@ jobs:
           run: |
             echo -e "[url \"https://github.com/\"]\n\tinsteadOf = ssh://git@github.com/" > ~/.gitconfig
             rustup default nightly && cargo install wasm-pack && yarn install && yarn build
+        - name: Authenticate with GitHub package registry
+          run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
         - name: Publish
           run: npm publish
-          env:
-            NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
