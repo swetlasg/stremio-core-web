@@ -6,6 +6,9 @@
     "scripts": {
         "build": "./build.sh"
     },
+    "publishConfig": {
+        "registry":"https://npm.pkg.github.com/@swetlasg"
+    },
     "devDependencies": {
         "@babel/cli": "7.6.0",
         "@babel/core": "7.6.0",
