@@ -1,5 +1,5 @@
 {
-    "name": "stremio-core-web",
+    "name": "@swetlasg/stremio-core-web",
     "version": "0.6.1",
     "main": "build/stremio_core_web.js",
     "license": "MIT",
