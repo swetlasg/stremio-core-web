@@ -4,20 +4,10 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
         - uses: actions/checkout@v1
-        - uses: actions/setup-node@v1
-          with:
-            node-version: 10
-            registry-url: 'https://npm.pkg.github.com'
-            scope: '@swetlasg'
-        # - name: Build
-          # run: |
-          # echo -e "[url \"https://github.com/\"]\n\tinsteadOf = ssh://git@github.com/" > ~/.gitconfig
-          # rustup default nightly && cargo install wasm-pack && yarn install && yarn build
-        - run: npm publish
-          env:
-            NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        - name: Build
+          run: |
+            echo -e "[url \"https://github.com/\"]\n\tinsteadOf = ssh://git@github.com/" > ~/.gitconfig
+            rustup default nightly && cargo install wasm-pack && yarn install && yarn build
