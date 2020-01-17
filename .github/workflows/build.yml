@@ -3,7 +3,7 @@ name: Rust build
 on: 
   push:
     tags-ignore:
-      - '*.*'
+      - '**'
 
 jobs:
   build:
