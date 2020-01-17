@@ -1,9 +1,6 @@
 name: Rust build
 
-on: 
-  push:
-    tags-ignore:
-      - '*.*.*'
+on: [push]
 
 jobs:
   build:
