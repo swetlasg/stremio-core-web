@@ -26,7 +26,7 @@ jobs:
             https://api.github.com/graphql
         - name: Show Release
           id: release
-          run: printf "::set-output name=id::%s" $(node -e 'console.log(require("./response.json").data.repository.registryPackages.edges[0].node.versions.edges[0].node.id)')
+          run: printf "::set-output name=id::%s" $(node -e 'console.log(require("/tmp/response.json").data.repository.registryPackages.edges[0].node.versions.edges[0].node.id)')
         - name: Show 
           env:
             ID: ${{ steps.release.outputs.id }}  
