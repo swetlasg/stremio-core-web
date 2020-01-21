@@ -22,4 +22,12 @@ jobs:
             -H "Accept: application/vnd.github.package-deletes-preview+json" \
             -H "Authorization: bearer ${{ secrets.GITHUB_TOKEN }}" \
             -d '{"query":"query {repository(owner:\"Stremio\", name:\"stremio-core-web\") {registryPackages(first:1) {edges{node{id, name, versions(last:100){edges {node {id, updatedAt, version}}}}}}}}"}' \
+            -o /tmp/response.json \
             https://api.github.com/graphql
+        - name: Show Release
+          id: release
+          run: printf "::set-output name=id::%s" $(cat /tmp/response.json)
+        - name: Show 
+          env:
+            ID: ${{ steps.release.outputs.data.repository.registryPackages.egdes[0].node.versions.edges[0].node.id }}  
+          run: echo $ID
